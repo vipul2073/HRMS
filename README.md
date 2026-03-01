@@ -247,3 +247,4 @@ npm start
 - Departments are a fixed preset list (Engineering, Design, HR, Finance, etc.)
 - Free tier on Render has cold start delay (~30–50 seconds on first request after inactivity)
 - Designed for desktop use; mobile layout not optimized
+x

@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Outlet, NavLink } from 'react-router-dom'
+import { Outlet, NavLink, useLocation } from 'react-router-dom'
 import './Layout.css'
 
 const NAV_ITEMS = [
@@ -9,24 +8,15 @@ const NAV_ITEMS = [
 ]
 
 export default function Layout() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-
   return (
     <div className="layout">
-      {/* Mobile overlay */}
-      {sidebarOpen && (
-        <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />
-      )}
-
-      <aside className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}>
+      <aside className="sidebar">
         <div className="sidebar-logo">
           <span className="logo-icon">◆</span>
           <div>
             <p className="logo-title">HRMS Lite</p>
             <p className="logo-sub">Admin Panel</p>
           </div>
-          {/* Close button on mobile */}
-          <button className="sidebar-close" onClick={() => setSidebarOpen(false)}>✕</button>
         </div>
 
         <nav className="sidebar-nav">
@@ -35,7 +25,6 @@ export default function Layout() {
               key={to}
               to={to}
               className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-              onClick={() => setSidebarOpen(false)}
             >
               <span className="nav-icon">{icon}</span>
               <span>{label}</span>
@@ -54,22 +43,9 @@ export default function Layout() {
         </div>
       </aside>
 
-      <div className="main-wrapper">
-        {/* Mobile top bar */}
-        <header className="mobile-header">
-          <button className="hamburger" onClick={() => setSidebarOpen(true)}>
-            <span /><span /><span />
-          </button>
-          <div className="mobile-logo">
-            <span className="logo-icon">◆</span>
-            <span className="logo-title">HRMS Lite</span>
-          </div>
-        </header>
-
-        <main className="main-content">
-          <Outlet />
-        </main>
-      </div>
+      <main className="main-content">
+        <Outlet />
+      </main>
     </div>
   )
 }
