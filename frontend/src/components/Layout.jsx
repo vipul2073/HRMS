@@ -69,6 +69,12 @@ export default function Layout() {
         <main className="main-content">
           <Outlet />
         </main>
+
+        <footer className="site-footer">
+          <p>
+            Developed by <strong>Vipul Nigam</strong> · For Demo Purpose Only · © {new Date().getFullYear()} All Rights Reserved to Vipul Nigam
+          </p>
+        </footer>
       </div>
     </div>
   )

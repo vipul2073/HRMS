@@ -1,4 +1,6 @@
-
+/* ═══════════════════════════════════════
+   LAYOUT — DESKTOP FIRST
+═══════════════════════════════════════ */
 
 .layout {
   display: flex;
@@ -586,6 +588,26 @@ tbody tr:hover {
 
 .search-input::placeholder {
   color: var(--text-muted);
+}
+
+/* ── Footer ── */
+.site-footer {
+  flex-shrink: 0;
+  padding: 12px 24px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.site-footer strong {
+  color: var(--accent-light);
+  font-weight: 600;
 }
 
 /* ── Hamburger ── */
