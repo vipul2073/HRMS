@@ -246,5 +246,5 @@ npm start
 - Leave management, payroll, and multi-user roles are out of scope
 - Departments are a fixed preset list (Engineering, Design, HR, Finance, etc.)
 - Free tier on Render has cold start delay (~30–50 seconds on first request after inactivity)
-- Designed for desktop use; mobile layout not optimized
+- Designed for desktop use; Now mobile layout optimized.
 x
